@@ -28,8 +28,11 @@ pkgver() {
 build() {
   cd "${srcdir}/${pkgname}"
 
-  export CFLAGS="${CFLAGS} -Wno-format-security"
-  export CXXFLAGS="${CXXFLAGS} -Wno-format-security"
+  #export CFLAGS="${CFLAGS} -Wno-format-security"
+  #export CXXFLAGS="${CXXFLAGS} -Wno-format-security"
+  export CFLAGS=""
+  export CXXFLAGS=""
+  export LDFLAGS=""
 
   git submodule update --init --recursive
 
