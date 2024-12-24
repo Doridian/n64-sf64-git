@@ -1,0 +1,27 @@
+pkgbase = starship-git
+	pkgdesc = Recompilation of Star Fox 64 for modern systems
+	pkgver = r1251.d5ac40a4
+	pkgrel = 1
+	url = https://github.com/HarbourMasters/Starship.git
+	arch = any
+	license = MIT
+	makedepends = git
+	makedepends = cmake
+	makedepends = ninja
+	makedepends = lsb-release
+	makedepends = boost
+	depends = sdl2
+	depends = libpng
+	depends = libzip
+	depends = nlohmann-json
+	depends = tinyxml2
+	depends = spdlog
+	depends = sdl2_net
+	source = starship-git::git+https://github.com/HarbourMasters/Starship.git
+	source = baserom.us.rev1.z64
+	source = launch.sh
+	sha256sums = SKIP
+	sha256sums = 385bcf1901ed12fb1152f3c227d1968cc54ae41e8566da66695df71af40a573f
+	sha256sums = SKIP
+
+pkgname = starship-git

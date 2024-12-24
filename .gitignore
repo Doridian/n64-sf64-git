@@ -1,0 +1,14 @@
+# Basics for the packaging
+*.n64
+*.v64
+*.z64
+/starship-git
+/pkg
+/src
+
+# Artifacts of running Starship to avoid accidental commits
+*.sav
+*.ini
+*.json
+*.pkg.tar*
+/logs
