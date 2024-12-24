@@ -28,18 +28,20 @@ pkgver() {
 build() {
   cd "${srcdir}/${pkgname}"
 
-  # Otherwise, this produces crashing builds...
-  export CFLAGS=""
-  export CXXFLAGS=""
+  export CFLAGS="${CFLAGS} -Wno-format-security"
+  export CXXFLAGS="${CXXFLAGS} -Wno-format-security"
 
   git submodule update --init --recursive
 
-  cmake -DCMAKE_BUILD_TYPE:STRING=Release -H. -Bbuild-cmake -GNinja
+  # Release builds are broken
+  #cmake -DCMAKE_BUILD_TYPE:STRING=Release -H. -Bbuild-cmake -GNinja
+  cmake -H. -Bbuild-cmake -GNinja
 
   cp -vf "${srcdir}/baserom.us.rev1.z64" "${srcdir}/${pkgname}/"
   cmake --build build-cmake --target ExtractAssets 
 
-  cmake --build build-cmake --config Release
+  #cmake --build build-cmake --config Release
+  cmake --build build-cmake
 }
 
 package() {
