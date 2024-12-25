@@ -6,9 +6,10 @@ pkgrel=1
 pkgdesc='Recompilation of Star Fox 64 for modern systems'
 arch=('any')
 url='https://github.com/HarbourMasters/Starship.git'
-license=('MIT')
+license=('Commercial') # As the built artifact includes the ROM or resources derived from it
 makedepends=('git' 'cmake' 'ninja' 'lsb-release' 'boost')
 depends=('sdl2' 'libpng' 'libzip' 'nlohmann-json' 'tinyxml2' 'spdlog' 'sdl2_net')
+options=('!strip' '!debug')
 source=(
     "${pkgname}::git+${url}"
     'baserom.us.rev1.z64' # Copyrighted, you have to find this yourself
