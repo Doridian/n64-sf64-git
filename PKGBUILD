@@ -13,10 +13,12 @@ source=(
     "${pkgname}::git+${url}"
     'baserom.us.rev1.z64' # Copyrighted, you have to find this yourself
     'launch.sh'
+    'starship-git.desktop'
 )
 sha256sums=(
     'SKIP'
     '385bcf1901ed12fb1152f3c227d1968cc54ae41e8566da66695df71af40a573f'
+    'SKIP'
     'SKIP'
 )
 
@@ -48,11 +50,14 @@ build() {
 }
 
 package() {
-  install -Dm755 "${srcdir}/launch.sh" "${pkgdir}/usr/bin/starship"
   cd "${srcdir}/${pkgname}"
+
+  install -Dm755 "${srcdir}/launch.sh" "${pkgdir}/opt/starship/launch.sh"
+  install -Dm644 "${srcdir}/starship-git.desktop" "${pkgdir}/usr/share/applications/starship-git.desktop"
   install -Dm755 build-cmake/Starship "${pkgdir}/opt/starship/Starship"
+  install -Dm644 logo.png "${pkgdir}/usr/share/pixmaps/starship-git.png"
   install -Dm644 build-cmake/sf64.otr "${pkgdir}/opt/starship/sf64.otr"
-  #install -Dm644 baserom.us.rev1.z64 "${pkgdir}/opt/starship/baserom.us.rev1.z64"
+  install -Dm644 build-cmake/sf64.otr "${pkgdir}/opt/starship/sf64.otr"
 }
 
 # vim:set ts=2 sw=2 et:

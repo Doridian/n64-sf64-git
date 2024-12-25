@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Starship (git)
+Exec=/opt/starship/launch.sh
+Terminal=false
+Icon=starship-git
+Type=Application
+Categories=Game;
