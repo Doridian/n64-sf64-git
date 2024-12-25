@@ -1,9 +1,9 @@
 [Desktop Entry]
 Version=1.0
-Name=Starship (git)
-Exec=/opt/starship-git/launch.sh
+Name=Star Fox 64 (git)
+Exec=/opt/sf64-git/launch.sh
 Terminal=false
-Icon=starship-git
+Icon=sf64-git
 Type=Application
 Categories=Game;
 StartupWMClass=Starship

@@ -2,7 +2,7 @@
 *.n64
 *.v64
 *.z64
-/starship-git
+/sf64-git
 /pkg
 /src
 

@@ -1,4 +1,4 @@
-# starship-git
+# sf64-git
 
 This is a PKGBUILD for https://github.com/HarbourMasters/Starship
 
