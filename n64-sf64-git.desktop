@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=Star Fox 64 (git)
-Exec=/opt/sf64-git/launch.sh
+Exec=/opt/n64/sf64-git/launch.sh
 Terminal=false
 Icon=sf64-git
 Type=Application

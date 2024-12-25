@@ -1,7 +1,7 @@
 # Maintainer: Doridian <archlinux at doridian dot net>
 
-pkgname=sf64-git
-pkgver=r1254.8c3f57af
+pkgname=n64-sf64-git
+pkgver=r1259.8cac5edd
 pkgrel=1
 pkgdesc='Recompilation of Star Fox 64 for modern systems'
 arch=('any')
@@ -13,7 +13,7 @@ source=(
     "${pkgname}::git+${url}"
     'baserom.us.rev1.z64' # Copyrighted, you have to find this yourself
     'launch.sh'
-    'sf64-git.desktop'
+    'n64-sf64-git.desktop'
 )
 sha256sums=(
     'SKIP'
@@ -52,12 +52,13 @@ build() {
 package() {
   cd "${srcdir}/${pkgname}"
 
-  install -Dm755 "${srcdir}/launch.sh" "${pkgdir}/opt/sf64-git/launch.sh"
-  install -Dm644 "${srcdir}/sf64-git.desktop" "${pkgdir}/usr/share/applications/sf64-git.desktop"
-  install -Dm755 build-cmake/Starship "${pkgdir}/opt/sf64-git/Starship"
-  install -Dm644 logo.png "${pkgdir}/usr/share/pixmaps/sf64-git.png"
-  install -Dm644 build-cmake/sf64.otr "${pkgdir}/opt/sf64-git/sf64.otr"
-  install -Dm644 build-cmake/sf64.otr "${pkgdir}/opt/sf64-git/sf64.otr"
+  install -Dm644 "${srcdir}/n64-sf64-git.desktop" "${pkgdir}/usr/share/applications/n64-sf64-git.desktop"
+  install -Dm644 logo.png "${pkgdir}/usr/share/pixmaps/n64-sf64-git.png"
+
+  install -Dm755 "${srcdir}/launch.sh" "${pkgdir}/opt/n64/sf64-git/launch.sh"
+  install -Dm755 build-cmake/Starship "${pkgdir}/opt/n64/sf64-git/Starship"
+  install -Dm644 build-cmake/sf64.otr "${pkgdir}/opt/n64/sf64-git/sf64.otr"
+  install -Dm644 build-cmake/sf64.otr "${pkgdir}/opt/n64/sf64-git/sf64.otr"
 }
 
 # vim:set ts=2 sw=2 et:

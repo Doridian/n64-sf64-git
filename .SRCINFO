@@ -1,6 +1,6 @@
-pkgbase = sf64-git
+pkgbase = n64-sf64-git
 	pkgdesc = Recompilation of Star Fox 64 for modern systems
-	pkgver = r1254.8c3f57af
+	pkgver = r1259.8cac5edd
 	pkgrel = 1
 	url = https://github.com/HarbourMasters/Starship.git
 	arch = any
@@ -17,13 +17,13 @@ pkgbase = sf64-git
 	depends = tinyxml2
 	depends = spdlog
 	depends = sdl2_net
-	source = sf64-git::git+https://github.com/HarbourMasters/Starship.git
+	source = n64-sf64-git::git+https://github.com/HarbourMasters/Starship.git
 	source = baserom.us.rev1.z64
 	source = launch.sh
-	source = sf64-git.desktop
+	source = n64-sf64-git.desktop
 	sha256sums = SKIP
 	sha256sums = 385bcf1901ed12fb1152f3c227d1968cc54ae41e8566da66695df71af40a573f
 	sha256sums = SKIP
 	sha256sums = SKIP
 
-pkgname = sf64-git
+pkgname = n64-sf64-git
