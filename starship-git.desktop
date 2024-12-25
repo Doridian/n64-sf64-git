@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=Starship (git)
-Exec=/opt/starship/launch.sh
+Exec=/opt/starship-git/launch.sh
 Terminal=false
 Icon=starship-git
 Type=Application

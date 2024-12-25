@@ -52,12 +52,12 @@ build() {
 package() {
   cd "${srcdir}/${pkgname}"
 
-  install -Dm755 "${srcdir}/launch.sh" "${pkgdir}/opt/starship/launch.sh"
+  install -Dm755 "${srcdir}/launch.sh" "${pkgdir}/opt/starship-git/launch.sh"
   install -Dm644 "${srcdir}/starship-git.desktop" "${pkgdir}/usr/share/applications/starship-git.desktop"
-  install -Dm755 build-cmake/Starship "${pkgdir}/opt/starship/Starship"
+  install -Dm755 build-cmake/Starship "${pkgdir}/opt/starship-git/Starship"
   install -Dm644 logo.png "${pkgdir}/usr/share/pixmaps/starship-git.png"
-  install -Dm644 build-cmake/sf64.otr "${pkgdir}/opt/starship/sf64.otr"
-  install -Dm644 build-cmake/sf64.otr "${pkgdir}/opt/starship/sf64.otr"
+  install -Dm644 build-cmake/sf64.otr "${pkgdir}/opt/starship-git/sf64.otr"
+  install -Dm644 build-cmake/sf64.otr "${pkgdir}/opt/starship-git/sf64.otr"
 }
 
 # vim:set ts=2 sw=2 et:
