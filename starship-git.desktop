@@ -6,3 +6,4 @@ Terminal=false
 Icon=starship-git
 Type=Application
 Categories=Game;
+StartupWMClass=Starship
