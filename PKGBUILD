@@ -1,7 +1,7 @@
 # Maintainer: Doridian <archlinux at doridian dot net>
 
 pkgname=n64-sf64-git
-pkgver=r1419.a466e0d7
+pkgver=r1420.1b534ccd
 pkgrel=1
 pkgdesc='Recompilation of Star Fox 64 for modern systems'
 arch=('any')
@@ -12,7 +12,7 @@ depends=('sdl2' 'libpng' 'libzip' 'nlohmann-json' 'tinyxml2' 'spdlog' 'sdl2_net'
 options=('!strip' '!debug')
 source=(
     "${pkgname}::git+${url}"
-    'baserom.us.rev1.z64' # Copyrighted, you have to find this yourself
+    'baserom.z64' # Copyrighted, you have to find this yourself
     'launch.sh'
     'n64-sf64-git.desktop'
 )
@@ -31,23 +31,18 @@ pkgver() {
 build() {
   cd "${srcdir}/${pkgname}"
 
-  #export CFLAGS="${CFLAGS} -Wno-format-security"
-  #export CXXFLAGS="${CXXFLAGS} -Wno-format-security"
-  export CFLAGS=""
-  export CXXFLAGS=""
-  export LDFLAGS=""
+  export CFLAGS="${CFLAGS} -Wno-format-security"
+  export CXXFLAGS="${CXXFLAGS} -Wno-format-security"
+  #export CFLAGS=""
+  #export CXXFLAGS=""
+  #export LDFLAGS=""
 
   git submodule update --init --recursive
+  cp -vf "${srcdir}/baserom.z64" "${srcdir}/${pkgname}/"
 
-  # Release builds are broken
-  #cmake -DCMAKE_BUILD_TYPE:STRING=Release -H. -Bbuild-cmake -GNinja
-  cmake -H. -Bbuild-cmake -GNinja
-
-  cp -vf "${srcdir}/baserom.us.rev1.z64" "${srcdir}/${pkgname}/"
-  cmake --build build-cmake --target ExtractAssets 
-
-  #cmake --build build-cmake --config Release
-  cmake --build build-cmake
+  cmake -DCMAKE_BUILD_TYPE:STRING=Release -H. -Bbuild-cmake -GNinja
+  cmake --build build-cmake --target ExtractAssets
+  cmake --build build-cmake -j
 }
 
 package() {
@@ -58,8 +53,7 @@ package() {
 
   install -Dm755 "${srcdir}/launch.sh" "${pkgdir}/opt/n64/sf64-git/launch.sh"
   install -Dm755 build-cmake/Starship "${pkgdir}/opt/n64/sf64-git/Starship"
-  install -Dm644 build-cmake/sf64.otr "${pkgdir}/opt/n64/sf64-git/sf64.otr"
-  install -Dm644 build-cmake/sf64.otr "${pkgdir}/opt/n64/sf64-git/sf64.otr"
+  install -Dm644 build-cmake/sf64.o2r "${pkgdir}/opt/n64/sf64-git/sf64.o2r"
 }
 
 # vim:set ts=2 sw=2 et:
