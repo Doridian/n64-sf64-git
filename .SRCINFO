@@ -1,6 +1,6 @@
 pkgbase = n64-sf64-git
 	pkgdesc = Recompilation of Star Fox 64 for modern systems
-	pkgver = r1259.8cac5edd
+	pkgver = r1419.a466e0d7
 	pkgrel = 1
 	url = https://github.com/HarbourMasters/Starship.git
 	arch = any
