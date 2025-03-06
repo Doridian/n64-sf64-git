@@ -1,7 +1,7 @@
 # Maintainer: Doridian <archlinux at doridian dot net>
 
 pkgname=n64-sf64-git
-pkgver=r1420.1b534ccd
+pkgver=r1452.0798df90
 pkgrel=1
 pkgdesc='Recompilation of Star Fox 64 for modern systems'
 arch=('any')
